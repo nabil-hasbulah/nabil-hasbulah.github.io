@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nabil Hasbulah – Information Architect</title>
+<meta name="description" content="Nabil Hasbulah is an information architect and technical writer who manages 300+ manuals and builds Python tools for multilingual documentation.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nabil Hasbulah – Information Architect">
+<meta property="og:description" content="Engineer-turned-information architect who manages 300+ manuals and builds Python tools that automate multilingual documentation delivery.">
+<meta property="og:image" content="photo.jpg">
+<meta name="twitter:card" content="summary">
+<!-- After deploying, add: <link rel="canonical" href="https://YOUR-DOMAIN/"> and <meta property="og:url" content="https://YOUR-DOMAIN/">, and make og:image an absolute URL. -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Nabil Hasbulah","jobTitle":"Information Architect","worksFor":{"@type":"Organization","name":"Motorola Solutions"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Vanderbilt University"},"address":{"@type":"PostalAddress","addressRegion":"Terengganu","addressCountry":"MY"},"knowsAbout":["DITA","Information architecture","Technical writing","Structured content","Python","Documentation automation"],"image":"photo.jpg","sameAs":["https://linkedin.com/in/nabil-hasbulah"]}</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&display=swap">
+<style>
+:root{--bg:#F7F3EC;--card:#FFFDF9;--ink:#231F1C;--mut:#6A645C;--line:#E4DDD0;--acc:#A9573F;--soft:#EBDCCB;--on:#fff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1D1B19;--card:#262320;--ink:#F1ECE4;--mut:#A39B90;--line:#38342F;--acc:#E0916F;--soft:#4A382B;--on:#1D1B19;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1D1B19;--card:#262320;--ink:#F1ECE4;--mut:#A39B90;--line:#38342F;--acc:#E0916F;--soft:#4A382B;--on:#1D1B19;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+h1,h2,h3,.brand,.lead,.fig b,.mail{font-family:Lora,Georgia,"Times New Roman",serif}
+a{color:var(--acc);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:4px}
+.w{max-width:960px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{font-weight:600;color:var(--ink);text-decoration:none}
+.links{display:flex;gap:22px;align-items:center;margin-left:auto;min-width:0}
+#tg{flex:none;margin-left:22px}
+.brand .in{display:none}
+@media(max-width:430px){.brand .fn{display:none}.brand .in{display:inline}}
+.links a{color:var(--mut);text-decoration:none;font-size:.9rem}
+.links a:hover{color:var(--acc)}
+#tg{background:none;border:1px solid var(--line);color:var(--ink);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1rem}
+.hero{display:flex;gap:40px;align-items:center;justify-content:space-between;padding:60px 0 48px}
+h1{font-size:clamp(2.7rem,8.5vw,4.8rem);font-weight:600;letter-spacing:-.03em;line-height:1.02;margin:0 0 20px}
+.lead{font-size:clamp(1.15rem,2.6vw,1.45rem);line-height:1.5;max-width:30em;margin:0 0 14px}
+.sub{color:var(--mut);max-width:34em;margin:0 0 10px}
+.sub{margin-bottom:24px}
+.loc{display:block;margin-top:8px;font-size:.92rem}
+.cs{display:grid;grid-template-columns:110px 1fr;gap:6px 18px;margin:16px 0 0}
+.cs dt{font:600 .78rem system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--acc);padding-top:4px}
+.cs dd{margin:0 0 6px}
+.card>h4{margin:22px 0 0;font:600 .78rem system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.card>h4+.tools{margin-top:10px}
+.btn{display:inline-block;padding:11px 22px;border:1px solid transparent;border-radius:999px;background:var(--acc);color:var(--on);text-decoration:none;font-weight:600;font-size:.95rem;margin:0 10px 10px 0}
+.btn.o{background:none;color:var(--ink);border-color:var(--line)}
+.ph{width:180px;height:180px;border-radius:40px;object-fit:cover;flex:none;border:1px solid var(--line)}
+.fig{display:grid;grid-template-columns:repeat(4,1fr);margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.fig li{padding:22px 16px}
+.fig li:first-child{padding-left:0}
+.fig li+li{border-left:1px solid var(--line)}
+.fig b{display:block;font-size:2.1rem;line-height:1;font-weight:600}
+.fig span{display:block;margin-top:8px;color:var(--mut);font-size:.88rem;line-height:1.4}
+.sec{display:grid;grid-template-columns:180px 1fr;gap:32px;padding:46px 0;border-top:1px solid var(--line)}
+.sec>h2{font-size:1.35rem;margin:0}
+.tl{border-left:1px solid var(--line);padding-left:24px;margin-left:5px}
+.job{position:relative;padding-bottom:28px}
+.job:last-child{padding-bottom:0}
+.job::before{content:"";position:absolute;left:-30px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--acc)}
+.job h3{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 16px;margin:0;font-size:1.15rem}
+time{font:500 .88rem system-ui,sans-serif;color:var(--acc)}
+.at{color:var(--mut);font-size:.92rem;margin:2px 0 8px}
+ul.b{margin:0;padding-left:1.1em}
+ul.b li{margin:0 0 6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
+.card h3,.plain h3{margin:0;font-size:1.25rem}
+.plain{margin-top:30px;padding-left:20px;border-left:3px solid var(--acc)}
+.tools{display:grid;gap:14px;margin:20px 0 0;padding:0;list-style:none}
+.tools li{padding-left:14px;border-left:3px solid var(--soft)}
+.tools b{font-family:Lora,Georgia,serif}
+.num{font-family:Lora,Georgia,serif;font-weight:600;color:var(--acc)}
+.sk{display:grid;grid-template-columns:170px 1fr;gap:12px 20px;margin:0}
+.sk dt{color:var(--mut);font-size:.9rem}
+.sk dd{margin:0}
+.edu+.edu{margin-top:20px}
+.edu h3{margin:0;font-size:1.1rem}
+.edu p{margin:2px 0 0;color:var(--mut)}
+.mail{display:inline-block;font-size:clamp(1.3rem,4.5vw,1.9rem);font-weight:600;color:var(--acc);margin:6px 0 18px;overflow-wrap:anywhere}
+footer{padding:26px 22px 40px;color:var(--mut);font-size:.85rem}
+@media(max-width:760px){
+.hero{flex-direction:column-reverse;align-items:flex-start;gap:24px;padding:36px 0 36px}
+.ph{width:104px;height:104px;border-radius:26px}
+nav .w{gap:12px}
+#tg{margin-left:0}
+.brand{flex:none}
+.links{gap:14px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.links::-webkit-scrollbar{display:none}
+.links a{font-size:.85rem;white-space:nowrap}
+.links a.hm{display:none}
+.fig{grid-template-columns:1fr 1fr}
+.fig li:nth-child(odd){border-left:0;padding-left:0}
+.fig li:nth-child(n+3){border-top:1px solid var(--line)}
+.sec{grid-template-columns:1fr;gap:20px;padding:36px 0}
+.sk,.cs{grid-template-columns:1fr;gap:2px}
+.cs dd{margin-bottom:12px}
+.sk dd{margin-bottom:14px}
+}
+@media print{
+:root,:root[data-theme="dark"]{--bg:#fff;--card:#fff;--ink:#000;--mut:#444;--line:#ccc;--acc:#000;--soft:#ddd;color-scheme:light}
+body{font-size:11pt;line-height:1.45}
+nav,#tg,.btn,body::before{display:none!important}
+.w{max-width:none;padding:0}
+.hero{padding:0 0 12pt;gap:20pt}
+.ph{width:80pt;height:80pt;border-radius:14pt}
+h1{font-size:28pt;margin-bottom:8pt}
+.lead{font-size:13pt}
+.sec{padding:14pt 0;grid-template-columns:110pt 1fr;gap:16pt}
+.fig li{padding:10pt}
+.fig b{font-size:18pt}
+.card{border:0;padding:0;border-radius:0}
+.job,.card,.plain,.edu{break-inside:avoid}
+.mail{font-size:13pt}
+footer{padding:12pt 0 0}
+}
+</style>
+</head>
+<body>
+<!-- To update: edit the text inside each section below. Sections: hero, figures, experience, projects (DocPrep uses a Problem/Approach/Result list), skills, education, contact. Portrait: photo.jpg. Bump the "Updated" date in the footer when you edit. Print or Save as PDF gives a CV layout. -->
+<nav>
+<div class="w">
+<a class="brand" href="#top" aria-label="Nabil Hasbulah, back to top"><span class="fn">Nabil Hasbulah</span><span class="in" aria-hidden="true">NH</span></a>
+<div class="links">
+<a href="#experience">Experience</a><a href="#projects">Projects</a><a class="hm" href="#skills">Skills</a><a href="#contact">Contact</a>
+</div>
+<button id="tg" type="button" aria-label="Switch theme">◐</button>
+</div>
+</nav>
+
+<main class="w" id="top">
+<section class="hero">
+<div>
+<h1>Nabil Hasbulah</h1>
+<p class="lead">Engineer-turned-information architect who manages 300+ manuals and builds Python tools that automate multilingual documentation delivery.</p>
+<p class="sub">I focus on DITA, structured content and the customer’s reading experience, and I use AI-assisted development to build tools that make team workflows faster and less error-prone. <span class="loc">Based in Terengganu, Malaysia · open to relocation · remote or hybrid preferred.</span></p>
+<a class="btn" href="mailto:nabil.hasbulah@gmail.com">Email me</a><a class="btn o" href="Nabil_Hasbulah_CV.pdf" download>Download CV</a><a class="btn o" href="https://linkedin.com/in/nabil-hasbulah">LinkedIn</a>
+</div>
+<img class="ph" src="photo.jpg" alt="Portrait of Nabil Hasbulah" width="180" height="180">
+</section>
+
+<ul class="fig">
+<li><b>300+</b><span>manuals managed</span></li>
+<li><b>150+</b><span>FrameMaker-to-DITA conversions</span></li>
+<li><b>51</b><span>language variants handled by my tools</span></li>
+<li><b>60%</b><span>less time to prepare a release package</span></li>
+</ul>
+
+<section class="sec" id="experience">
+<h2>Experience</h2>
+<div class="tl">
+<article class="job">
+<h3>Information Architect <time>Jun 2023 – Present</time></h3>
+<p class="at">Motorola Solutions, Penang, Malaysia</p>
+<ul class="b">
+<li>Manage 300+ manuals across the Accessories &amp; Energy portfolio, combining information architecture and technical writing for customer-facing documentation, and lead two technical writers.</li>
+<li>Completed 150+ FrameMaker-to-DITA conversions and designed new documentation, improving content quality, delivery methods and customer experience.</li>
+<li>Gather requirements through SME and audience interviews, historical audience data and PI Planning; contribute as Product Owner where required.</li>
+<li>Coordinate with hardware, software, media and tool teams to estimate effort, manage portfolio publishing and assess scope changes.</li>
+</ul>
+</article>
+<article class="job">
+<h3>Process &amp; Equipment Engineer <time>Jul 2019 – Jun 2023</time></h3>
+<p class="at">Intel Technology, Kulim, Malaysia</p>
+<ul class="b">
+<li>Supported plant startup: installed and qualified 5 tools and handed them over to high-volume manufacturing.</li>
+<li>Performed qualification testing, statistical analysis, FMEA and safety risk assessments.</li>
+<li>Worked with Quality and Integration teams on quality excursions and streamlined the lot disposition process, reducing downtime by 20%.</li>
+</ul>
+</article>
+<article class="job">
+<h3>Mechanical Engineer <time>Mar 2017 – Jul 2019</time></h3>
+<p class="at">Motorola Solutions, Penang, Malaysia</p>
+<ul class="b">
+<li>Developed energy and power accessories for two-way radios: batteries, vehicle power adapters, wall power supplies and desktop chargers.</li>
+<li>Conducted mechanical design, design verification, reliability testing, root-cause analysis and BOM preparation.</li>
+<li>Contributed to a Li-ion body-worn camera battery project, including tolerance stack analysis and regulatory and safety qualification testing.</li>
+</ul>
+</article>
+<article class="job">
+<h3>Product Engineer <time>Sep 2016 – Mar 2017</time></h3>
+<p class="at">ASM Technology, Pasir Gudang, Johor, Malaysia</p>
+<ul class="b">
+<li>Designed jigs and fixtures to reduce mechanical assembly cycle time and supported process improvement and production troubleshooting.</li>
+</ul>
+</article>
+</div>
+</section>
+
+<section class="sec" id="projects">
+<h2>Projects</h2>
+<div>
+<article class="card">
+<h3>DocPrep: multilingual documentation automation suite</h3>
+<p class="at">Internal tool at Motorola Solutions, Aug – Oct 2026</p>
+<dl class="cs">
+<dt>Problem</dt><dd>Preparing multilingual manual releases involved repetitive manual steps (renaming, merging and packaging files for up to 51 language variants), where small mistakes were easy to make.</dd>
+<dt>Approach</dt><dd>Built a Python desktop suite that standardizes those steps. I took it from idea through beta and pilot to version 1.0, adding pre-flight checks, detailed logs and privacy-conscious adoption tracking.</dd>
+<dt>Result</dt><dd>Release package preparation time dropped by <span class="num">60%</span>, and HTML packaging by about <span class="num">80%</span>.</dd>
+</dl>
+<h4>Tools in the suite</h4>
+<ul class="tools">
+<li><b>DocRename</b><br>Batch-renames monolingual PDFs for the release workflow. Co-developed with a teammate.</li>
+<li><b>DocMerge</b><br>Merges up to 51 language variants into one bookmarked PDF, with file discovery fallbacks, print-versus-digital cover handling and per-file error isolation.</li>
+<li><b>DocPackage</b><br>Packages per-language HTML bundles from Heretto exports with source-structure validation, language detection and consistent ZIP naming. It cut task time by about <span class="num">80%</span>.</li>
+</ul>
+</article>
+<article class="plain">
+<h3>GetSize: manual print-size compliance</h3>
+<p class="at">Internal tool at Motorola Solutions, Jul – Aug 2026</p>
+<p>Replaced a manual review of hundreds of technical manuals with a batch desktop tool. Checking time dropped by about <span class="num">95%</span>, and so did the risk of human error.</p>
+</article>
+</div>
+</section>
+
+<section class="sec" id="skills">
+<h2>Skills</h2>
+<dl class="sk">
+<dt>Authoring and publishing</dt><dd>DITA, CCMS, Heretto, Oxygen XML, Adobe FrameMaker, Microsoft Office</dd>
+<dt>Development and automation</dt><dd>Python, Tkinter, pypdf, Google Apps Script, AI-augmented coding, UAT</dd>
+<dt>Engineering</dt><dd>Creo, AutoCAD, SolidEdge, Agile PLM</dd>
+<dt>Languages</dt><dd>English and Malay (native or bilingual), Japanese (elementary)</dd>
+</dl>
+</section>
+
+<section class="sec" id="education">
+<h2>Education</h2>
+<div>
+<article class="edu">
+<h3>B.E. Mechanical Engineering, Vanderbilt University</h3>
+<p>2012 – 2016, Nashville, Tennessee. Cum Laude (CGPA 3.727/4.000), Dean’s List every semester, Tau Beta Pi Engineering Honor Society.</p>
+</article>
+<article class="edu">
+<h3>Sijil Pelajaran Malaysia, SMK Tengku Ampuan Intan</h3>
+<p>2011, Terengganu. Straight 10 A+.</p>
+</article>
+</div>
+</section>
+
+<section class="sec" id="contact">
+<h2>Contact</h2>
+<div>
+<p>I’m open to information architecture, structured content and documentation automation roles, including relocation. Remote or hybrid is my preference.</p>
+<a class="mail" href="mailto:nabil.hasbulah@gmail.com">nabil.hasbulah@gmail.com</a><br>
+<a class="btn o" href="https://linkedin.com/in/nabil-hasbulah">Connect on LinkedIn</a>
+</div>
+</section>
+</main>
+<footer class="w">© 2026 Nabil Hasbulah · Updated November 2026</footer>
+
+<script>
+var r=document.documentElement,b=document.getElementById("tg");
+function dark(){return r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches}
+b.onclick=function(){r.dataset.theme=dark()?"light":"dark";try{localStorage.setItem("theme",r.dataset.theme)}catch(e){}b.setAttribute("aria-label",dark()?"Switch to light theme":"Switch to dark theme")};
+b.setAttribute("aria-label",dark()?"Switch to light theme":"Switch to dark theme");
+</script>
+</body>
+</html>

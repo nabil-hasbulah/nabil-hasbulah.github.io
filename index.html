@@ -13,7 +13,8 @@
 <!-- After deploying, add: <link rel="canonical" href="https://YOUR-DOMAIN/"> and <meta property="og:url" content="https://YOUR-DOMAIN/">, and make og:image an absolute URL. -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Nabil Hasbulah","jobTitle":"Information Architect","worksFor":{"@type":"Organization","name":"Motorola Solutions"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Vanderbilt University"},"address":{"@type":"PostalAddress","addressRegion":"Terengganu","addressCountry":"MY"},"knowsAbout":["DITA","Information architecture","Technical writing","Structured content","Python","Documentation automation"],"image":"photo.jpg","sameAs":["https://linkedin.com/in/nabil-hasbulah"]}</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
-<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}
+if("IntersectionObserver"in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&display=swap">
@@ -85,6 +86,50 @@ ul.b li{margin:0 0 6px}
 .edu p{margin:2px 0 0;color:var(--mut)}
 .mail{display:inline-block;font-size:clamp(1.3rem,4.5vw,1.9rem);font-weight:600;color:var(--acc);margin:6px 0 18px;overflow-wrap:anywhere}
 footer{padding:26px 22px 40px;color:var(--mut);font-size:.85rem}
+/* ---- Motion (only when JS runs and the visitor hasn't asked for reduced motion: see the .js class) ---- */
+nav::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--acc);transform:scaleX(var(--p,0));transform-origin:0 50%}
+.links a{position:relative;padding:6px 0}
+.links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:var(--acc);transform:scaleX(0);transition:transform .3s ease}
+.links a.on{color:var(--ink)}
+.links a.on::after{transform:scaleX(1)}
+.hi{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin:0 0 12px;min-height:1.6em}
+#hi{font:italic 500 1.2rem/1.3 Lora,Georgia,serif;color:var(--acc)}
+#hl{font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:1px 8px}
+#hi,#hl{display:inline-block;transition:opacity .35s ease,transform .35s ease}
+.hi.out #hi,.hi.out #hl{opacity:0;transform:translateY(-6px)}
+.fig b,.cnt{font-variant-numeric:tabular-nums}
+.js [data-reveal]{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js [data-reveal].in{opacity:1;transform:none}
+.js .tl{position:relative}
+.js .tl::before{content:"";position:absolute;left:-1.5px;top:0;width:2px;height:100%;background:var(--acc);transform:scaleY(var(--tp,0));transform-origin:50% 0}
+.js .job::before{transition:background .35s ease,box-shadow .35s ease}
+.js .job.lit::before{background:var(--acc);box-shadow:0 0 0 4px var(--soft)}
+/* DocPrep illustration: 51 language PDFs merge into one bookmarked PDF */
+.merge{margin:18px 0 6px}
+.stage{position:relative;height:150px;border:1px solid var(--line);border-radius:12px;background:var(--bg);overflow:hidden}
+.t,.pdf{position:absolute;left:50%;top:50%}
+.t{width:34px;height:44px;margin:-22px 0 0 -17px;padding:5px 0 0 5px;border:1px solid var(--line);border-radius:4px;background-color:var(--card);background-image:linear-gradient(var(--line),var(--line)),linear-gradient(var(--line),var(--line)),linear-gradient(var(--line),var(--line));background-size:22px 2px,16px 2px,20px 2px;background-position:5px 19px,5px 25px,5px 31px;background-repeat:no-repeat;box-shadow:0 1px 3px rgba(0,0,0,.08);font:600 9px/1 system-ui,sans-serif;color:var(--mut);transform:translate(calc(-82px + var(--i)*2.4px),calc(6px - var(--i)*1.2px)) rotate(calc((var(--i) - 5.5)*1.8deg))}
+.stage{--sx:1}
+@media(min-width:761px){.stage{--sx:2.1}}
+.bm{position:absolute;left:50%;top:50%;margin-left:6px;width:116px;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--card);transform:translateY(-50%);font:11px/1.25 system-ui,sans-serif;color:var(--mut)}
+.bm i{display:block;font-style:normal;padding:2px 0 2px 8px;border-left:2px solid var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bm i+i{margin-top:3px}
+.bm i:first-child{border-color:var(--acc);color:var(--ink)}
+.bm i:last-child{color:var(--acc);border-color:transparent}
+.js .bm{transition:opacity .45s ease 1.55s,transform .45s ease 1.55s}
+.js .merge:not(.in) .bm{opacity:0;transform:translate(-12px,-50%)}
+.t.more{color:var(--acc)}
+.pdf{z-index:2;width:62px;height:80px;margin:-40px 0 0 -31px;padding:0 0 10px 9px;display:flex;align-items:flex-end;border-radius:6px;background:var(--acc);color:var(--on);font:700 13px/1 system-ui,sans-serif;letter-spacing:.04em;box-shadow:0 8px 18px rgba(0,0,0,.18);transform:translate(-52px,0)}
+.pdf::before{content:"";position:absolute;top:-1px;right:10px;width:11px;height:20px;background:var(--bg);clip-path:polygon(0 0,100% 0,100% 100%,50% 76%,0 100%)}
+.merge figcaption{margin-top:8px;color:var(--mut);font-size:.88rem}
+.cnt{display:inline-block;min-width:2ch;text-align:right;font:600 1.05rem Lora,Georgia,serif;color:var(--acc)}
+.js .t{transition:transform .9s cubic-bezier(.65,0,.25,1) calc(var(--i)*55ms)}
+.js .pdf{transition:opacity .3s ease 1.05s,transform .55s cubic-bezier(.3,1.5,.5,1) 1.05s}
+.js .pdf::before{transition:transform .4s ease 1.5s,opacity .4s ease 1.5s}
+.js .merge:not(.in) .t{transform:translate(calc(var(--x)*var(--sx)),var(--y)) rotate(var(--r))}
+.js .merge:not(.in) .pdf{opacity:0;transform:translate(-52px,0) scale(.5)}
+.js .merge:not(.in) .pdf::before{opacity:0;transform:translateY(-10px)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 @media(max-width:760px){
 .hero{flex-direction:column-reverse;align-items:flex-start;gap:24px;padding:36px 0 36px}
 .ph{width:104px;height:104px;border-radius:26px}
@@ -106,7 +151,8 @@ nav .w{gap:12px}
 @media print{
 :root,:root[data-theme="dark"]{--bg:#fff;--card:#fff;--ink:#000;--mut:#444;--line:#ccc;--acc:#000;--soft:#ddd;color-scheme:light}
 body{font-size:11pt;line-height:1.45}
-nav,#tg,.btn,body::before{display:none!important}
+nav,#tg,.btn,body::before,.hi,.merge{display:none!important}
+[data-reveal]{opacity:1!important;transform:none!important}
 .w{max-width:none;padding:0}
 .hero{padding:0 0 12pt;gap:20pt}
 .ph{width:80pt;height:80pt;border-radius:14pt}
@@ -123,7 +169,9 @@ footer{padding:12pt 0 0}
 </style>
 </head>
 <body>
-<!-- To update: edit the text inside each section below. Sections: hero, figures, experience, projects (DocPrep uses a Problem/Approach/Result list), skills, education, contact. Portrait: photo.jpg. Bump the "Updated" date in the footer when you edit. Print or Save as PDF gives a CV layout. -->
+<!-- To update: edit the text inside each section below. Sections: hero, figures, experience, projects (DocPrep uses a Problem/Approach/Result list), skills, education, contact. Portrait: photo.jpg. Bump the "Updated" date in the footer when you edit. Print or Save as PDF gives a CV layout.
+Animations: numbers marked data-count count up from 0 (keep the format "300+", "60%"); sections marked data-reveal fade in; the hero greeting list is "G" in the script at the bottom. Visitors with "reduce motion" turned on see everything static. -->
+
 <nav>
 <div class="w">
 <a class="brand" href="#top" aria-label="Nabil Hasbulah, back to top"><span class="fn">Nabil Hasbulah</span><span class="in" aria-hidden="true">NH</span></a>
@@ -135,8 +183,9 @@ footer{padding:12pt 0 0}
 </nav>
 
 <main class="w" id="top">
-<section class="hero">
+<section class="hero" id="intro">
 <div>
+<p class="hi" aria-hidden="true"><span id="hi">Hello</span><span id="hl">English</span></p>
 <h1>Nabil Hasbulah</h1>
 <p class="lead">Engineer-turned-information architect who manages 300+ manuals and builds Python tools that automate multilingual documentation delivery.</p>
 <p class="sub">I focus on DITA, structured content and the customer’s reading experience, and I use AI-assisted development to build tools that make team workflows faster and less error-prone. <span class="loc">Based in Terengganu, Malaysia · open to relocation · remote or hybrid preferred.</span></p>
@@ -145,14 +194,14 @@ footer{padding:12pt 0 0}
 <img class="ph" src="photo.jpg" alt="Portrait of Nabil Hasbulah" width="180" height="180">
 </section>
 
-<ul class="fig">
-<li><b>300+</b><span>manuals managed</span></li>
-<li><b>150+</b><span>FrameMaker-to-DITA conversions</span></li>
-<li><b>51</b><span>language variants handled by my tools</span></li>
-<li><b>60%</b><span>less time to prepare a release package</span></li>
+<ul class="fig" data-reveal>
+<li><b data-count>300+</b><span>manuals managed</span></li>
+<li><b data-count>150+</b><span>FrameMaker-to-DITA conversions</span></li>
+<li><b data-count>51</b><span>language variants handled by my tools</span></li>
+<li><b data-count>60%</b><span>less time to prepare a release package</span></li>
 </ul>
 
-<section class="sec" id="experience">
+<section class="sec" id="experience" data-reveal>
 <h2>Experience</h2>
 <div class="tl">
 <article class="job">
@@ -193,12 +242,31 @@ footer{padding:12pt 0 0}
 </div>
 </section>
 
-<section class="sec" id="projects">
+<section class="sec" id="projects" data-reveal>
 <h2>Projects</h2>
 <div>
 <article class="card">
 <h3>DocPrep: multilingual documentation automation suite</h3>
 <p class="at">Internal tool at Motorola Solutions, Aug – Oct 2026</p>
+<figure class="merge" data-reveal="0.7">
+<div class="stage" role="img" aria-label="Illustration: separate language PDFs merging into one bookmarked PDF">
+<span class="t" style="--i:0;--x:-112px;--y:-30px;--r:-14deg">EN</span>
+<span class="t" style="--i:1;--x:-92px;--y:22px;--r:9deg">MS</span>
+<span class="t" style="--i:2;--x:-70px;--y:-42px;--r:-6deg">JA</span>
+<span class="t" style="--i:3;--x:-50px;--y:30px;--r:12deg">ZH</span>
+<span class="t" style="--i:4;--x:-28px;--y:-18px;--r:-10deg">DE</span>
+<span class="t" style="--i:5;--x:-8px;--y:40px;--r:5deg">FR</span>
+<span class="t" style="--i:6;--x:12px;--y:-38px;--r:-8deg">ES</span>
+<span class="t" style="--i:7;--x:32px;--y:20px;--r:11deg">PT</span>
+<span class="t" style="--i:8;--x:52px;--y:-26px;--r:-5deg">IT</span>
+<span class="t" style="--i:9;--x:72px;--y:36px;--r:8deg">KO</span>
+<span class="t" style="--i:10;--x:92px;--y:-40px;--r:13deg">TH</span>
+<span class="t more" style="--i:11;--x:112px;--y:14px;--r:-7deg">+40</span>
+<span class="pdf">PDF</span>
+<span class="bm"><i>English</i><i>Bahasa Melayu</i><i>日本語</i><i>Deutsch</i><i>+47 more</i></span>
+</div>
+<figcaption><b class="cnt" data-count data-delay="1050">51</b> language variants → 1 bookmarked PDF, automatically</figcaption>
+</figure>
 <dl class="cs">
 <dt>Problem</dt><dd>Preparing multilingual manual releases involved repetitive manual steps (renaming, merging and packaging files for up to 51 language variants), where small mistakes were easy to make.</dd>
 <dt>Approach</dt><dd>Built a Python desktop suite that standardizes those steps. I took it from idea through beta and pilot to version 1.0, adding pre-flight checks, detailed logs and privacy-conscious adoption tracking.</dd>
@@ -219,7 +287,7 @@ footer{padding:12pt 0 0}
 </div>
 </section>
 
-<section class="sec" id="skills">
+<section class="sec" id="skills" data-reveal>
 <h2>Skills</h2>
 <dl class="sk">
 <dt>Authoring and publishing</dt><dd>DITA, CCMS, Heretto, Oxygen XML, Adobe FrameMaker, Microsoft Office</dd>
@@ -229,7 +297,7 @@ footer{padding:12pt 0 0}
 </dl>
 </section>
 
-<section class="sec" id="education">
+<section class="sec" id="education" data-reveal>
 <h2>Education</h2>
 <div>
 <article class="edu">
@@ -243,7 +311,7 @@ footer{padding:12pt 0 0}
 </div>
 </section>
 
-<section class="sec" id="contact">
+<section class="sec" id="contact" data-reveal>
 <h2>Contact</h2>
 <div>
 <p>I’m open to information architecture, structured content and documentation automation roles, including relocation. Remote or hybrid is my preference.</p>
@@ -259,6 +327,42 @@ var r=document.documentElement,b=document.getElementById("tg");
 function dark(){return r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches}
 b.onclick=function(){r.dataset.theme=dark()?"light":"dark";try{localStorage.setItem("theme",r.dataset.theme)}catch(e){}b.setAttribute("aria-label",dark()?"Switch to light theme":"Switch to dark theme")};
 b.setAttribute("aria-label",dark()?"Switch to light theme":"Switch to dark theme");
+
+/* Scroll progress bar + current-section highlight in the nav (always on) */
+var nav=document.querySelector("nav"),tl=document.querySelector(".tl"),jobs=[].slice.call(document.querySelectorAll(".job")),motion=r.classList.contains("js"),busy=false;
+function onScroll(){busy=false;var h=r.scrollHeight-innerHeight;nav.style.setProperty("--p",h>0?Math.min(scrollY/h,1):0);
+ if(!motion)return;var line=innerHeight*.62,rc=tl.getBoundingClientRect();
+ tl.style.setProperty("--tp",Math.min(Math.max((line-rc.top)/rc.height,0),1));
+ jobs.forEach(function(j){j.classList.toggle("lit",j.getBoundingClientRect().top+10<line)})}
+addEventListener("scroll",function(){if(!busy){busy=true;requestAnimationFrame(onScroll)}},{passive:true});
+addEventListener("resize",onScroll);onScroll();
+if("IntersectionObserver"in window){
+ var links={};[].forEach.call(document.querySelectorAll(".links a"),function(a){links[a.getAttribute("href").slice(1)]=a});
+ var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+  for(var k in links){links[k].classList.remove("on");links[k].removeAttribute("aria-current")}
+  var a=links[e.target.id];if(a){a.classList.add("on");a.setAttribute("aria-current","location")}})},{rootMargin:"-45% 0px -50% 0px"});
+ [].forEach.call(document.querySelectorAll("section[id]"),function(s){spy.observe(s)});
+}
+
+/* Animations: only when the visitor hasn't asked for reduced motion */
+if(motion){
+ var counters=[].slice.call(document.querySelectorAll("[data-count]"));
+ counters.forEach(function(el){var m=el.textContent.match(/^(\d+)(.*)$/);el._n=+m[1];el._s=m[2];el.textContent="0"+el._s});
+ function finish(){counters.forEach(function(el){el.textContent=el._n+el._s})}
+ function count(el){var t0=null;(function f(ts){if(t0===null)t0=ts;var p=Math.min((ts-t0)/1200,1);
+  el.textContent=Math.round(el._n*(1-Math.pow(1-p,3)))+el._s;if(p<1)requestAnimationFrame(f)})(performance.now())}
+ function reveal(es,io){es.forEach(function(e){if(!e.isIntersecting)return;var t=e.target;t.classList.add("in");io.unobserve(t);
+  [].forEach.call(t.querySelectorAll("[data-count]"),function(c){if(c.parentNode.closest("[data-reveal]")===t)setTimeout(function(){count(c)},+c.dataset.delay||150)})})}
+ var ioSoft=new IntersectionObserver(reveal,{threshold:.12,rootMargin:"0px 0px -6% 0px"}),ioFull=new IntersectionObserver(reveal,{threshold:.7});
+ [].forEach.call(document.querySelectorAll("[data-reveal]"),function(el){(el.dataset.reveal?ioFull:ioSoft).observe(el)});
+ addEventListener("beforeprint",finish);
+
+ /* Hero greeting cycles through some of the languages DocPrep handles */
+ var G=[["Hello","English","en"],["Selamat datang","Bahasa Melayu","ms"],["こんにちは","日本語","ja"],["Bonjour","Français","fr"],["Hallo","Deutsch","de"],["Hola","Español","es"],["你好","中文","zh"],["Olá","Português","pt"],["안녕하세요","한국어","ko"],["Ciao","Italiano","it"],["Xin chào","Tiếng Việt","vi"],["Merhaba","Türkçe","tr"]],
+  hp=document.querySelector(".hi"),hi=document.getElementById("hi"),hl=document.getElementById("hl"),gi=0;
+ setInterval(function(){if(document.hidden)return;hp.classList.add("out");
+  setTimeout(function(){gi=(gi+1)%G.length;hi.textContent=G[gi][0];hl.textContent=G[gi][1];hp.lang=G[gi][2];hp.classList.remove("out")},350)},2600);
+}
 </script>
 </body>
 </html>

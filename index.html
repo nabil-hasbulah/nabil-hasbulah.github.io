@@ -17,11 +17,13 @@
 if("IntersectionObserver"in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Mr+Dafoe&family=Orbitron:wght@600;800&display=swap">
 <style>
-:root{--bg:#F7F3EC;--card:#FFFDF9;--ink:#231F1C;--mut:#6A645C;--line:#E4DDD0;--acc:#A9573F;--soft:#EBDCCB;--on:#fff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1D1B19;--card:#262320;--ink:#F1ECE4;--mut:#A39B90;--line:#38342F;--acc:#E0916F;--soft:#4A382B;--on:#1D1B19;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#1D1B19;--card:#262320;--ink:#F1ECE4;--mut:#A39B90;--line:#38342F;--acc:#E0916F;--soft:#4A382B;--on:#1D1B19;color-scheme:dark}
+:root{--bg:#F7F3EC;--card:#FFFDF9;--ink:#231F1C;--mut:#6A645C;--line:#E4DDD0;--acc:#A9573F;--soft:#EBDCCB;--on:#fff;--warn:#B4741A;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1D1B19;--card:#262320;--ink:#F1ECE4;--mut:#A39B90;--line:#38342F;--acc:#E0916F;--soft:#4A382B;--on:#1D1B19;--warn:#E3A948;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1D1B19;--card:#262320;--ink:#F1ECE4;--mut:#A39B90;--line:#38342F;--acc:#E0916F;--soft:#4A382B;--on:#1D1B19;--warn:#E3A948;color-scheme:dark}
+/* 80s synthwave theme: third option on the theme button */
+:root[data-theme="synth"]{--bg:#12062B;--card:#1C0B40;--ink:#F7ECFF;--mut:#BBA6DD;--line:#45277A;--acc:#FF3EA5;--cy:#2DE2E6;--soft:#5A2A8A;--on:#12062B;color-scheme:dark}
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
@@ -129,6 +131,33 @@ nav::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;ba
 .js .merge:not(.in) .t{transform:translate(calc(var(--x)*var(--sx)),var(--y)) rotate(var(--r))}
 .js .merge:not(.in) .pdf{opacity:0;transform:translate(-52px,0) scale(.5)}
 .js .merge:not(.in) .pdf::before{opacity:0;transform:translateY(-10px)}
+/* GetSize illustration: a scan line checks each manual's page size and flags mismatches */
+.card+.card{margin-top:20px}
+.scanbox{margin:18px 0 6px}
+.scanbox figcaption{margin-top:8px;color:var(--mut);font-size:.88rem}
+.row{position:absolute;left:12px;right:12px;bottom:22px;display:flex;justify-content:center;align-items:flex-end;gap:7px}
+.row::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1px;background:var(--line)}
+.m{position:relative;flex:none;width:var(--w);height:var(--h);border:1px solid var(--line);border-radius:3px;background-color:var(--card);background-image:linear-gradient(var(--line),var(--line)),linear-gradient(var(--line),var(--line)),linear-gradient(var(--line),var(--line));background-size:60% 2px,45% 2px,55% 2px;background-position:50% 30%,50% 45%,50% 60%;background-repeat:no-repeat;transform-origin:50% 100%}
+.m i{position:absolute;left:50%;bottom:100%;margin-bottom:5px;transform:translateX(-50%);font:600 8.5px/1 system-ui,sans-serif;font-style:normal;color:var(--mut);white-space:nowrap}
+.m b{position:absolute;top:-6px;right:-6px;width:14px;height:14px;border-radius:50%;display:grid;place-items:center;font:700 8px/1 system-ui,sans-serif;background:var(--soft);color:var(--acc)}
+.m.bad{border-color:var(--warn);background-color:color-mix(in srgb,var(--warn) 12%,var(--card))}
+.m.bad i{color:var(--warn)}
+.m.bad b{background:var(--warn);color:var(--on)}
+.chip{position:absolute;top:10px;left:12px;padding:3px 9px;border:1px solid var(--line);border-radius:999px;background:var(--card);font:600 11px/1.4 system-ui,sans-serif;color:var(--ink)}
+.chip em{font-style:normal;color:var(--warn)}
+.scan{position:absolute;top:0;bottom:0;left:0;width:2px;background:var(--acc);box-shadow:0 0 12px var(--acc);opacity:0;pointer-events:none}
+.scan::before{content:"";position:absolute;top:0;bottom:0;right:2px;width:56px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--acc) 16%,transparent))}
+@keyframes sweep{0%{left:0;opacity:0}5%{opacity:1}92%{opacity:1}100%{left:100%;opacity:0}}
+@keyframes wob{0%,100%{transform:none}25%{transform:rotate(-7deg)}50%{transform:rotate(5deg)}75%{transform:rotate(-3deg)}}
+.js .scanbox.in .scan{animation:sweep 2.4s linear .2s 1 both}
+.js .m i,.js .m b{transition:opacity .3s ease var(--d,0ms),transform .35s cubic-bezier(.3,1.6,.5,1) var(--d,0ms)}
+.js .m{transition:border-color .3s ease var(--d,0ms),background-color .3s ease var(--d,0ms)}
+.js .scanbox.in .m.bad{animation:wob .55s ease calc(var(--d,0ms) + 100ms) 1 both}
+.js .scanbox:not(.in) .m i{opacity:0;transform:translate(-50%,4px)}
+.js .scanbox:not(.in) .m b{opacity:0;transform:scale(.3)}
+.js .scanbox:not(.in) .m.bad{border-color:var(--line);background-color:var(--card)}
+.js .chip{transition:opacity .4s ease 2.6s,transform .4s ease 2.6s}
+.js .scanbox:not(.in) .chip{opacity:0;transform:translateY(-6px)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 @media(max-width:760px){
 .hero{flex-direction:column-reverse;align-items:flex-start;gap:24px;padding:36px 0 36px}
@@ -140,6 +169,8 @@ nav .w{gap:12px}
 .links::-webkit-scrollbar{display:none}
 .links a{font-size:.85rem;white-space:nowrap}
 .links a.hm{display:none}
+.row{gap:6px}
+.row .m:nth-child(n+9){display:none}
 .fig{grid-template-columns:1fr 1fr}
 .fig li:nth-child(odd){border-left:0;padding-left:0}
 .fig li:nth-child(n+3){border-top:1px solid var(--line)}
@@ -151,7 +182,7 @@ nav .w{gap:12px}
 @media print{
 :root,:root[data-theme="dark"]{--bg:#fff;--card:#fff;--ink:#000;--mut:#444;--line:#ccc;--acc:#000;--soft:#ddd;color-scheme:light}
 body{font-size:11pt;line-height:1.45}
-nav,#tg,.btn,body::before,.hi,.merge{display:none!important}
+nav,#tg,.btn,body::before,.hi,.merge,.scanbox{display:none!important}
 [data-reveal]{opacity:1!important;transform:none!important}
 .w{max-width:none;padding:0}
 .hero{padding:0 0 12pt;gap:20pt}
@@ -279,9 +310,32 @@ Animations: numbers marked data-count count up from 0 (keep the format "300+", "
 <li><b>DocPackage</b><br>Packages per-language HTML bundles from Heretto exports with source-structure validation, language detection and consistent ZIP naming. It cut task time by about <span class="num">80%</span>.</li>
 </ul>
 </article>
-<article class="plain">
+<article class="card">
 <h3>GetSize: manual print-size compliance</h3>
 <p class="at">Internal tool at Motorola Solutions, Jul – Aug 2026</p>
+<figure class="scanbox" data-reveal="0.7">
+<div class="stage" role="img" aria-label="Illustration: a scan line checks the page size of a row of manuals and flags the ones that don't match">
+<span class="chip">✓ Batch checked · <em>2 flagged</em></span>
+<div class="row">
+<span class="m" style="--w:30px;--h:42px"><i>A4</i><b>✓</b></span>
+<span class="m" style="--w:22px;--h:31px"><i>A5</i><b>✓</b></span>
+<span class="m" style="--w:31px;--h:40px"><i>Letter</i><b>✓</b></span>
+<span class="m bad" style="--w:25px;--h:33px"><i>≠ A5</i><b>✕</b></span>
+<span class="m" style="--w:30px;--h:42px"><i>A4</i><b>✓</b></span>
+<span class="m" style="--w:16px;--h:23px"><i>A6</i><b>✓</b></span>
+<span class="m bad" style="--w:33px;--h:44px"><i>≠ A4</i><b>✕</b></span>
+<span class="m" style="--w:22px;--h:31px"><i>A5</i><b>✓</b></span>
+<span class="m" style="--w:31px;--h:40px"><i>Letter</i><b>✓</b></span>
+<span class="m" style="--w:30px;--h:42px"><i>A4</i><b>✓</b></span>
+<span class="m" style="--w:16px;--h:23px"><i>A6</i><b>✓</b></span>
+<span class="m" style="--w:22px;--h:31px"><i>A5</i><b>✓</b></span>
+<span class="m" style="--w:30px;--h:42px"><i>A4</i><b>✓</b></span>
+<span class="m" style="--w:31px;--h:40px"><i>Letter</i><b>✓</b></span>
+</div>
+<span class="scan"></span>
+</div>
+<figcaption><b class="cnt" data-count data-delay="2600">95%</b> less checking time, across hundreds of manuals per batch</figcaption>
+</figure>
 <p>Replaced a manual review of hundreds of technical manuals with a batch desktop tool. Checking time dropped by about <span class="num">95%</span>, and so did the risk of human error.</p>
 </article>
 </div>
@@ -356,6 +410,13 @@ if(motion){
  var ioSoft=new IntersectionObserver(reveal,{threshold:.12,rootMargin:"0px 0px -6% 0px"}),ioFull=new IntersectionObserver(reveal,{threshold:.7});
  [].forEach.call(document.querySelectorAll("[data-reveal]"),function(el){(el.dataset.reveal?ioFull:ioSoft).observe(el)});
  addEventListener("beforeprint",finish);
+
+ /* GetSize: time each manual's check to the moment the scan line passes it */
+ [].forEach.call(document.querySelectorAll(".scanbox .stage"),function(st){
+  function place(){var s=st.getBoundingClientRect();if(!s.width)return;
+   [].forEach.call(st.querySelectorAll(".m"),function(m){var b=m.getBoundingClientRect();
+    m.style.setProperty("--d",Math.round(200+Math.max(0,(b.left+b.width/2-s.left)/s.width)*2400)+"ms")})}
+  place();addEventListener("resize",place)});
 
  /* Hero greeting cycles through some of the languages DocPrep handles */
  var G=[["Hello","English","en"],["Selamat datang","Bahasa Melayu","ms"],["こんにちは","日本語","ja"],["Bonjour","Français","fr"],["Hallo","Deutsch","de"],["Hola","Español","es"],["你好","中文","zh"],["Olá","Português","pt"],["안녕하세요","한국어","ko"],["Ciao","Italiano","it"],["Xin chào","Tiếng Việt","vi"],["Merhaba","Türkçe","tr"]],

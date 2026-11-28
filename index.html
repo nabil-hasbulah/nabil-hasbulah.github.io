@@ -8,10 +8,12 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Nabil Hasbulah – Information Architect">
 <meta property="og:description" content="Engineer-turned-information architect who manages 300+ manuals and builds Python tools that automate multilingual documentation delivery.">
-<meta property="og:image" content="photo.jpg">
+<meta property="og:url" content="https://nabil-hasbulah.github.io/">
+<meta property="og:image" content="https://nabil-hasbulah.github.io/photo.jpg">
+<meta property="og:image:alt" content="Portrait of Nabil Hasbulah">
 <meta name="twitter:card" content="summary">
-<!-- After deploying, add: <link rel="canonical" href="https://YOUR-DOMAIN/"> and <meta property="og:url" content="https://YOUR-DOMAIN/">, and make og:image an absolute URL. -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Nabil Hasbulah","jobTitle":"Information Architect","worksFor":{"@type":"Organization","name":"Motorola Solutions"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Vanderbilt University"},"address":{"@type":"PostalAddress","addressRegion":"Terengganu","addressCountry":"MY"},"knowsAbout":["DITA","Information architecture","Technical writing","Structured content","Python","Documentation automation"],"image":"photo.jpg","sameAs":["https://linkedin.com/in/nabil-hasbulah"]}</script>
+<link rel="canonical" href="https://nabil-hasbulah.github.io/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Nabil Hasbulah","jobTitle":"Information Architect","worksFor":{"@type":"Organization","name":"Motorola Solutions"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Vanderbilt University"},"address":{"@type":"PostalAddress","addressRegion":"Terengganu","addressCountry":"MY"},"knowsAbout":["DITA","Information architecture","Technical writing","Structured content","Python","Documentation automation"],"url":"https://nabil-hasbulah.github.io/","image":"https://nabil-hasbulah.github.io/photo.jpg","sameAs":["https://linkedin.com/in/nabil-hasbulah"]}</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}
 if("IntersectionObserver"in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("js")</script>
@@ -131,6 +133,19 @@ nav::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;ba
 .js .merge:not(.in) .t{transform:translate(calc(var(--x)*var(--sx)),var(--y)) rotate(var(--r))}
 .js .merge:not(.in) .pdf{opacity:0;transform:translate(-52px,0) scale(.5)}
 .js .merge:not(.in) .pdf::before{opacity:0;transform:translateY(-10px)}
+/* How I work: four steps that light up in order */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:0;padding:0;list-style:none}
+.steps li{position:relative}
+.steps li:not(:last-child)::after{content:"";position:absolute;top:15px;left:40px;right:-10px;height:2px;border-radius:2px;background:var(--acc);transform-origin:0 50%}
+.sn{display:grid;place-items:center;width:32px;height:32px;border:2px solid var(--acc);border-radius:50%;background:var(--acc);color:var(--on);font:600 .95rem/1 Lora,Georgia,serif}
+.steps h3{margin:12px 0 4px;font-size:1.1rem}
+.steps p{margin:0;color:var(--mut);font-size:.92rem;line-height:1.5}
+.js .sn{transition:background .35s ease calc(var(--k)*200ms + 250ms),color .35s ease calc(var(--k)*200ms + 250ms),border-color .35s ease calc(var(--k)*200ms + 250ms),transform .45s cubic-bezier(.3,1.6,.5,1) calc(var(--k)*200ms + 250ms)}
+.js .steps h3,.js .steps p{transition:opacity .4s ease calc(var(--k)*200ms + 250ms)}
+.js .steps li::after{transition:transform .3s ease calc(var(--k)*200ms + 380ms)}
+.js #approach:not(.in) .sn{background:var(--bg);color:var(--mut);border-color:var(--line);transform:scale(.8)}
+.js #approach:not(.in) .steps h3,.js #approach:not(.in) .steps p{opacity:.35}
+.js #approach:not(.in) .steps li::after{transform:scaleX(0)}
 /* GetSize illustration: a scan line checks each manual's page size and flags mismatches */
 .card+.card{margin-top:20px}
 .scanbox{margin:18px 0 6px}
@@ -170,6 +185,8 @@ nav .w{gap:12px}
 .links a{font-size:.85rem;white-space:nowrap}
 .links a.hm{display:none}
 .row{gap:6px}
+.steps{grid-template-columns:1fr 1fr;gap:22px 18px}
+.steps li:nth-child(2n)::after{display:none}
 .row .m:nth-child(n+9){display:none}
 .fig{grid-template-columns:1fr 1fr}
 .fig li:nth-child(odd){border-left:0;padding-left:0}
@@ -184,6 +201,8 @@ nav .w{gap:12px}
 body{font-size:11pt;line-height:1.45}
 nav,#tg,.btn,body::before,.hi,.merge,.scanbox{display:none!important}
 [data-reveal]{opacity:1!important;transform:none!important}
+.steps li::after{display:none}
+.steps{gap:10pt}
 .w{max-width:none;padding:0}
 .hero{padding:0 0 12pt;gap:20pt}
 .ph{width:80pt;height:80pt;border-radius:14pt}
@@ -200,7 +219,7 @@ footer{padding:12pt 0 0}
 </style>
 </head>
 <body>
-<!-- To update: edit the text inside each section below. Sections: hero, figures, experience, projects (DocPrep uses a Problem/Approach/Result list), skills, education, contact. Portrait: photo.jpg. Bump the "Updated" date in the footer when you edit. Print or Save as PDF gives a CV layout.
+<!-- To update: edit the text inside each section below. Sections: hero, figures, experience, how I work (#approach), projects (DocPrep uses a Problem/Approach/Result list), skills, education, contact. Portrait: photo.jpg. Bump the "Updated" date in the footer when you edit. Print or Save as PDF gives a CV layout.
 Animations: numbers marked data-count count up from 0 (keep the format "300+", "60%"); sections marked data-reveal fade in; the hero greeting list is "G" in the script at the bottom. Visitors with "reduce motion" turned on see everything static. -->
 
 <nav>
@@ -271,6 +290,16 @@ Animations: numbers marked data-count count up from 0 (keep the format "300+", "
 </ul>
 </article>
 </div>
+</section>
+
+<section class="sec" id="approach" data-reveal>
+<h2>How I work</h2>
+<ol class="steps">
+<li style="--k:0"><span class="sn">1</span><h3>Audit</h3><p>Interview SMEs and audiences, and use historical audience data, to learn what readers actually need.</p></li>
+<li style="--k:1"><span class="sn">2</span><h3>Model</h3><p>Structure content in DITA so a portfolio of 300+ manuals stays consistent.</p></li>
+<li style="--k:2"><span class="sn">3</span><h3>Author</h3><p>Write and convert structured content (150+ FrameMaker-to-DITA conversions) and lead two technical writers.</p></li>
+<li style="--k:3"><span class="sn">4</span><h3>Automate</h3><p>Build Python tools that remove repetitive, error-prone release steps, like DocPrep and GetSize.</p></li>
+</ol>
 </section>
 
 <section class="sec" id="projects" data-reveal>
@@ -402,12 +431,12 @@ if("IntersectionObserver"in window){
 if(motion){
  var counters=[].slice.call(document.querySelectorAll("[data-count]"));
  counters.forEach(function(el){var m=el.textContent.match(/^(\d+)(.*)$/);el._n=+m[1];el._s=m[2];el.textContent="0"+el._s});
- function finish(){counters.forEach(function(el){el.textContent=el._n+el._s})}
+ function finish(){counters.forEach(function(el){el.textContent=el._n+el._s});[].forEach.call(document.querySelectorAll("[data-reveal]"),function(el){el.classList.add("in")})}
  function count(el){var t0=null;(function f(ts){if(t0===null)t0=ts;var p=Math.min((ts-t0)/1200,1);
   el.textContent=Math.round(el._n*(1-Math.pow(1-p,3)))+el._s;if(p<1)requestAnimationFrame(f)})(performance.now())}
  function reveal(es,io){es.forEach(function(e){if(!e.isIntersecting)return;var t=e.target;t.classList.add("in");io.unobserve(t);
   [].forEach.call(t.querySelectorAll("[data-count]"),function(c){if(c.parentNode.closest("[data-reveal]")===t)setTimeout(function(){count(c)},+c.dataset.delay||150)})})}
- var ioSoft=new IntersectionObserver(reveal,{threshold:.12,rootMargin:"0px 0px -6% 0px"}),ioFull=new IntersectionObserver(reveal,{threshold:.7});
+ var ioSoft=new IntersectionObserver(reveal,{threshold:0,rootMargin:"0px 0px -12% 0px"}),ioFull=new IntersectionObserver(reveal,{threshold:.7});
  [].forEach.call(document.querySelectorAll("[data-reveal]"),function(el){(el.dataset.reveal?ioFull:ioSoft).observe(el)});
  addEventListener("beforeprint",finish);
 
